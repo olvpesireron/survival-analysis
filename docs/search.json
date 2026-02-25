@@ -1,0 +1,332 @@
+[
+  {
+    "objectID": "chapter4.html",
+    "href": "chapter4.html",
+    "title": "Implementasi Survival Analysis dalam Kasus Nyata Sains Data",
+    "section": "",
+    "text": "Note\n\n\n\nTerapan Analisis Survival dalam Sains Data",
+    "crumbs": [
+      "**MATERI**",
+      "4. Implementasi Survival Analysis dalam Kasus Nyata Sains Data"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#berikut-beberapa-bidang-yang-sangat-relevan-dan-berpengaruh",
+    "href": "chapter4.html#berikut-beberapa-bidang-yang-sangat-relevan-dan-berpengaruh",
+    "title": "Implementasi Survival Analysis dalam Kasus Nyata Sains Data",
+    "section": "2.1 Berikut beberapa bidang yang sangat relevan dan berpengaruh:",
+    "text": "2.1 Berikut beberapa bidang yang sangat relevan dan berpengaruh:\n\n2.1.1 Bidang Kesehatan\nContoh:\n\nWaktu bertahan hidup pasien setelah diagnosis\nWaktu hingga penyakit kambuh\nWaktu hingga terjadi komplikasi\n\nPeran survival analysis:\n\nMenghitung peluang pasien bertahan hidup sampai waktu tertentu\nMengukur risiko kematian atau komplikasi pada setiap periode\nMembandingkan efektivitas beberapa jenis pengobatan\n\nBidang kesehatan menjadi salah satu pengguna utama survival analysis karena banyak data pasien belum mengalami kejadian saat penelitian selesai, sehingga membutuhkan metode khusus untuk menganalisisnya.\n\n\n2.1.2 Bidang Investasi dan Keuangan\nContoh:\n\nWaktu hingga perusahaan bangkrut\nWaktu hingga kredit mengalami gagal bayar\nWaktu hingga obligasi mengalami default\n\nPeran survival analysis:\n\nMengestimasi kemungkinan perusahaan atau debitur tetap bertahan dalam periode tertentu\nMengukur risiko kebangkrutan atau gagal bayar dari waktu ke waktu\nMengidentifikasi faktor yang meningkatkan risiko finansial\n\nMetode ini membantu perusahaan dan lembaga keuangan dalam mengelola risiko serta membuat keputusan investasi yang lebih tepat.\n\n\n2.1.3 Bidang Pendidikan\nContoh:\n\nWaktu hingga mahasiswa lulus\nWaktu hingga mahasiswa dropout\nLama studi mahasiswa\n\nPeran survival analysis:\n\nMenghitung peluang mahasiswa masih aktif sampai semester tertentu\nMengidentifikasi faktor yang memengaruhi kelulusan atau dropout\nMembantu evaluasi kebijakan akademik\n\nKarena tidak semua mahasiswa mengalami kelulusan pada waktu yang sama, metode ini sangat relevan digunakan.\n\n\n2.1.4 Bidang Sosial\nContoh:\n\nWaktu hingga seseorang memperoleh pekerjaan\nWaktu hingga terjadi perceraian\nLama partisipasi dalam suatu program sosial\n\nPeran survival analysis:\n\nMenganalisis lamanya suatu kondisi sosial berlangsung\nMengukur risiko terjadinya suatu peristiwa dalam periode tertentu\nMengevaluasi efektivitas program sosial\n\nMetode ini membantu memahami perubahan kondisi sosial secara lebih terstruktur dan berbasis waktu.",
+    "crumbs": [
+      "**MATERI**",
+      "4. Implementasi Survival Analysis dalam Kasus Nyata Sains Data"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#bagaimana-cara-menggunakan-survival-analysis",
+    "href": "chapter4.html#bagaimana-cara-menggunakan-survival-analysis",
+    "title": "Implementasi Survival Analysis dalam Kasus Nyata Sains Data",
+    "section": "2.2 Bagaimana Cara Menggunakan Survival Analysis?",
+    "text": "2.2 Bagaimana Cara Menggunakan Survival Analysis?\nSecara praktis, penggunaan survival analysis dalam sains data dilakukan melalui beberapa langkah utama:\n\n2.2.1 Menentukan Event dan Time-to-Event\nPertama, tentukan: - Apa event yang ingin dianalisis (misalnya: pasien meninggal, pelanggan churn, mahasiswa dropout). - Dari kapan waktu mulai dihitung hingga event terjadi.\nContoh: Jika menganalisis churn pelanggan, maka: - Event = pelanggan berhenti berlangganan - Time-to-event = lama waktu sejak mulai berlangganan hingga berhenti\n\n\n2.2.2 Menentukan Status Data (Event atau Censored)\nSetiap individu harus diberi label: - 1 = event terjadi - 0 = censored (event belum terjadi sampai akhir pengamatan)\nIni penting karena survival analysis secara khusus dirancang untuk menangani data yang belum mengalami event.\n\n\n2.2.3 Mengestimasi Fungsi Survival (Kaplan–Meier)\nDigunakan untuk menjawab pertanyaan:\n\nBerapa probabilitas suatu individu masih bertahan sampai waktu tertentu?\n\nHasilnya berupa kurva survival yang menunjukkan penurunan probabilitas dari waktu ke waktu.\nContoh interpretasi: Jika pada bulan ke-12 probabilitas survival = 0,70\nArtinya 70% pelanggan masih bertahan sampai bulan ke-12.\n\n\n2.2.4 Menghitung Hazard (Risiko Sesaat)\nHazard menunjukkan:\n\nSeberapa besar risiko event terjadi pada waktu tertentu, dengan syarat individu masih bertahan sampai waktu tersebut.\n\nUntuk menganalisis pengaruh faktor tertentu (misalnya usia, pendapatan, jenis pengobatan), digunakan model:\n\nCox Proportional Hazards Model\n\nModel ini menghasilkan hazard ratio, yang menunjukkan apakah suatu faktor meningkatkan atau menurunkan risiko kejadian.",
+    "crumbs": [
+      "**MATERI**",
+      "4. Implementasi Survival Analysis dalam Kasus Nyata Sains Data"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#kesimpulan",
+    "href": "chapter4.html#kesimpulan",
+    "title": "Implementasi Survival Analysis dalam Kasus Nyata Sains Data",
+    "section": "2.3 Kesimpulan",
+    "text": "2.3 Kesimpulan\nSurvival analysis memiliki peran penting dalam sains data, khususnya di bidang kesehatan, investasi, pendidikan, dan sosial. Metode ini digunakan ketika analisis tidak hanya berfokus pada apakah suatu kejadian terjadi, tetapi juga pada kapan kejadian tersebut terjadi serta bagaimana risikonya berubah dari waktu ke waktu.\nSingkatnya, survival analysis dalam sains data adalah tentang menghargai waktu. Analisis ini tidak hanya melihat hasil akhir (misalnya hidup atau meninggal, bertahan atau churn), tetapi juga memperhatikan durasi hingga kejadian tersebut terjadi. Dengan memahami durasi dan pola risiko, organisasi dapat mengambil keputusan yang lebih tepat, melakukan intervensi pada waktu yang optimal, serta mengelola sumber daya secara lebih efisien dan ekonomis.\nDengan demikian, survival analysis bukan sekadar teknik statistik, tetapi alat strategis dalam pengambilan keputusan berbasis waktu dan risiko.",
+    "crumbs": [
+      "**MATERI**",
+      "4. Implementasi Survival Analysis dalam Kasus Nyata Sains Data"
+    ]
+  },
+  {
+    "objectID": "chapter2.html",
+    "href": "chapter2.html",
+    "title": "Urgensi Survival Analysis dalam Perkembangan Sains Data Modern",
+    "section": "",
+    "text": "Note\n\n\n\nMengapa Belajar Analisis Survival?",
+    "crumbs": [
+      "**MATERI**",
+      "2. Urgensi Survival Analysis dalam Perkembangan Sains Data Modern"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#banyak-permasalahan-berbentuk-time-to-event",
+    "href": "chapter2.html#banyak-permasalahan-berbentuk-time-to-event",
+    "title": "Urgensi Survival Analysis dalam Perkembangan Sains Data Modern",
+    "section": "2.1 Banyak Permasalahan Berbentuk Time-to-Event",
+    "text": "2.1 Banyak Permasalahan Berbentuk Time-to-Event\nSurvival analysis perlu dipelajari karena banyak fenomena nyata berfokus pada waktu hingga terjadinya suatu kejadian (time-to-event), bukan sekadar apakah kejadian tersebut terjadi atau tidak.\nContoh permasalahan time-to-event antara lain:\n\nWaktu pasien hingga sembuh atau meninggal\nWaktu pelanggan hingga berhenti berlangganan (churn)\nWaktu karyawan hingga resign\nWaktu mesin hingga rusak\nWaktu mahasiswa hingga lulus\n\nPermasalahan semacam ini tidak dapat dianalisis secara optimal menggunakan metode regresi atau klasifikasi biasa, karena aspek waktu merupakan komponen utama yang harus dimodelkan.",
+    "crumbs": [
+      "**MATERI**",
+      "2. Urgensi Survival Analysis dalam Perkembangan Sains Data Modern"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#adanya-data-censoring",
+    "href": "chapter2.html#adanya-data-censoring",
+    "title": "Urgensi Survival Analysis dalam Perkembangan Sains Data Modern",
+    "section": "2.2 Adanya Data Censoring",
+    "text": "2.2 Adanya Data Censoring\nDalam penelitian berbasis waktu, sering ditemukan data di mana kejadian belum terjadi selama periode pengamatan. Kondisi ini disebut sebagai censoring.\nJika data censored diperlakukan sebagai data lengkap atau diabaikan, maka hasil analisis akan menjadi bias. Survival analysis menyediakan metode khusus yang mampu menangani data censoring secara tepat, sehingga estimasi probabilitas dan risiko tetap akurat.",
+    "crumbs": [
+      "**MATERI**",
+      "2. Urgensi Survival Analysis dalam Perkembangan Sains Data Modern"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#kemampuan-mengukur-risiko-seiring-waktu",
+    "href": "chapter2.html#kemampuan-mengukur-risiko-seiring-waktu",
+    "title": "Urgensi Survival Analysis dalam Perkembangan Sains Data Modern",
+    "section": "2.3 Kemampuan Mengukur Risiko Seiring Waktu",
+    "text": "2.3 Kemampuan Mengukur Risiko Seiring Waktu\nSurvival analysis memungkinkan analisis terhadap:\n\nProbabilitas bertahan (survival probability)\nFungsi risiko atau hazard rate\nPerubahan tingkat risiko dari waktu ke waktu\n\nHal ini penting karena dalam banyak kasus, risiko suatu kejadian tidak bersifat konstan, melainkan berubah mengikuti waktu.\nMetode klasifikasi biasa hanya memberikan prediksi ya/tidak, sedangkan survival analysis mampu menjawab pertanyaan: kapan dan seberapa besar risiko kejadian terjadi.",
+    "crumbs": [
+      "**MATERI**",
+      "2. Urgensi Survival Analysis dalam Perkembangan Sains Data Modern"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#relevansi-dalam-sains-data-dan-dunia-industri",
+    "href": "chapter2.html#relevansi-dalam-sains-data-dan-dunia-industri",
+    "title": "Urgensi Survival Analysis dalam Perkembangan Sains Data Modern",
+    "section": "2.4 Relevansi dalam Sains Data dan Dunia Industri",
+    "text": "2.4 Relevansi dalam Sains Data dan Dunia Industri\nDalam bidang sains data, survival analysis memiliki banyak penerapan praktis, seperti:\n\nAnalisis churn pelanggan pada perusahaan digital\nAnalisis risiko gagal bayar dalam industri keuangan\nPredictive maintenance pada sektor manufaktur\nAnalisis retensi pengguna pada perusahaan teknologi\n\nKemampuan menganalisis durasi dan risiko memberikan nilai tambah bagi praktisi sains data karena menghasilkan insight yang lebih mendalam dan berbasis waktu.",
+    "crumbs": [
+      "**MATERI**",
+      "2. Urgensi Survival Analysis dalam Perkembangan Sains Data Modern"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#kesimpulan",
+    "href": "chapter2.html#kesimpulan",
+    "title": "Urgensi Survival Analysis dalam Perkembangan Sains Data Modern",
+    "section": "2.5 Kesimpulan",
+    "text": "2.5 Kesimpulan\nSurvival analysis perlu dipelajari karena mampu menangani permasalahan time-to-event dan data censoring yang tidak dapat dianalisis dengan metode statistik biasa. Metode ini memungkinkan analisis durasi dan risiko secara akurat serta memiliki relevansi tinggi dalam berbagai bidang statistik dan sains data.",
+    "crumbs": [
+      "**MATERI**",
+      "2. Urgensi Survival Analysis dalam Perkembangan Sains Data Modern"
+    ]
+  },
+  {
+    "objectID": "chapter1.html",
+    "href": "chapter1.html",
+    "title": "Konsep Dasar Censoring dalam Analisis Survival",
+    "section": "",
+    "text": "Note\n\n\n\nApa yang dimaksud dengan Censoring Data?",
+    "crumbs": [
+      "**MATERI**",
+      "1. Konsep Dasar Censoring dalam Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#pengertian-censoring-dalam-time-to-event-data",
+    "href": "chapter1.html#pengertian-censoring-dalam-time-to-event-data",
+    "title": "Konsep Dasar Censoring dalam Analisis Survival",
+    "section": "2.1 Pengertian Censoring dalam Time-to-Event Data",
+    "text": "2.1 Pengertian Censoring dalam Time-to-Event Data\nDalam survival analysis, censoring adalah kondisi ketika waktu terjadinya suatu event (kejadian) tidak diketahui secara pasti, tetapi sebagian informasi mengenai waktu tersebut masih tersedia.\nDengan kata lain, data tidak sepenuhnya hilang, melainkan hanya tidak lengkap. Oleh karena itu, sering ditegaskan bahwa:\n\nCensoring ≠ Missing Data\n\nPada missing data, informasi benar-benar tidak tersedia. Sedangkan pada censoring, kita tetap mengetahui sebagian informasi mengenai durasi atau batas waktu terjadinya event.\nSecara formal, censoring terjadi ketika:\n\nWaktu kejadian hanya diketahui lebih besar, lebih kecil, atau berada dalam suatu interval tertentu, tetapi waktu pastinya tidak diketahui.",
+    "crumbs": [
+      "**MATERI**",
+      "1. Konsep Dasar Censoring dalam Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#contoh-censoring-dalam-kehidupan-nyata",
+    "href": "chapter1.html#contoh-censoring-dalam-kehidupan-nyata",
+    "title": "Konsep Dasar Censoring dalam Analisis Survival",
+    "section": "2.2 Contoh Censoring dalam Kehidupan Nyata",
+    "text": "2.2 Contoh Censoring dalam Kehidupan Nyata\nMisalkan dilakukan penelitian mengenai:\n\nWaktu labu ukir (jack-o’-lantern) dari pertama dipajang di teras hingga menjadi lembek (mushy).\n\nJika penelitian dilakukan selama 30 hari menjelang Halloween dan pada akhir penelitian masih terdapat labu yang belum lembek, maka:\n\nKita mengetahui bahwa labu tersebut telah bertahan minimal sampai hari ke-30.\nNamun, kita tidak mengetahui kapan tepatnya labu itu akan menjadi lembek setelah penelitian berakhir.\n\nKondisi ini disebut sebagai censored data, karena waktu pasti labu menjadi lembek tidak teramati secara lengkap.\nSebaliknya, labu yang sudah menjadi lembek selama periode penelitian termasuk data non-censored, karena waktu kejadiannya diketahui (atau setidaknya diketahui interval terjadinya).",
+    "crumbs": [
+      "**MATERI**",
+      "1. Konsep Dasar Censoring dalam Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#jenis-jenis-censoring",
+    "href": "chapter1.html#jenis-jenis-censoring",
+    "title": "Konsep Dasar Censoring dalam Analisis Survival",
+    "section": "2.3 Jenis-Jenis Censoring",
+    "text": "2.3 Jenis-Jenis Censoring\nDalam survival analysis, terdapat beberapa jenis censoring, yaitu:\n\n2.3.1 a. Right Censoring\nRight censoring adalah jenis yang paling umum terjadi. Kondisi ini terjadi ketika:\n\nWaktu kejadian lebih besar dari waktu terakhir pengamatan.\n\nContoh:\nPenelitian dilakukan selama 30 hari. Hingga hari ke-30, beberapa labu masih terlihat bagus dan belum menjadi lembek.\nSecara matematis dapat ditulis:\n\\[\nT \\geq 30\n\\]\nArtinya, waktu bertahan labu minimal 30 hari, tetapi waktu pastinya belum diketahui karena penelitian sudah selesai.\n\n\n2.3.2 b. Left Censoring\nLeft censoring terjadi ketika:\n\nKejadian sudah terjadi sebelum waktu pengamatan dimulai, tetapi waktu pastinya tidak diketahui.\n\nContoh:\nSaat penelitian dimulai, ditemukan beberapa labu yang sudah dalam kondisi lembek. Namun, tidak diketahui kapan tepatnya labu tersebut mulai membusuk.\nArtinya, kejadian (menjadi lembek) sudah terjadi sebelum penelitian dimulai, tetapi waktu pastinya tidak diketahui.\n\n\n2.3.3 c. Interval Censoring\nInterval censoring terjadi ketika:\n\nKejadian diketahui terjadi di antara dua waktu tertentu, tetapi tidak diketahui secara pasti kapan dalam interval tersebut.\n\nContoh:\nPemeriksaan labu dilakukan setiap 3 hari.\n\nHari ke-6: labu masih bagus\n\nHari ke-9: labu sudah lembek\n\nArtinya:\n\\[\n6 &lt; T \\leq 9\n\\]\nKejadian terjadi di antara hari ke-6 dan hari ke-9, tetapi waktu pastinya tidak diketahui.",
+    "crumbs": [
+      "**MATERI**",
+      "1. Konsep Dasar Censoring dalam Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#pentingnya-censoring-dalam-survival-analysis",
+    "href": "chapter1.html#pentingnya-censoring-dalam-survival-analysis",
+    "title": "Konsep Dasar Censoring dalam Analisis Survival",
+    "section": "2.4 Pentingnya Censoring dalam Survival Analysis",
+    "text": "2.4 Pentingnya Censoring dalam Survival Analysis\nKonsep censoring sangat penting karena:\n\nSurvival analysis berfokus pada durasi waktu sampai event terjadi.\nDalam praktiknya, tidak semua objek (misalnya labu) mengalami event selama periode penelitian.\nJika data censored diabaikan atau diperlakukan seperti data lengkap, maka hasil analisis akan menjadi bias.\n\nSebagai contoh, jika labu yang masih bagus pada hari ke-30 dianggap menjadi lembek tepat pada hari ke-30, maka rata-rata waktu ketahanan labu akan menjadi tidak akurat.\nOleh karena itu, survival analysis menggunakan metode khusus seperti:\n\nKaplan–Meier estimator untuk mengestimasi fungsi survival\nCox proportional hazards model untuk menganalisis pengaruh variabel terhadap risiko kejadian\n\nMetode-metode tersebut dirancang khusus untuk menangani data yang mengandung censoring.",
+    "crumbs": [
+      "**MATERI**",
+      "1. Konsep Dasar Censoring dalam Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#kesimpulan",
+    "href": "chapter1.html#kesimpulan",
+    "title": "Konsep Dasar Censoring dalam Analisis Survival",
+    "section": "2.5 Kesimpulan",
+    "text": "2.5 Kesimpulan\nCensoring dalam time-to-event data adalah kondisi ketika waktu terjadinya suatu event tidak diketahui secara pasti, tetapi sebagian informasi mengenai durasi tetap tersedia. Censoring bukan merupakan kesalahan atau kehilangan data, melainkan karakteristik alami dalam data survival.\nKeberadaan censoring membuat survival analysis berbeda dari metode statistik biasa, dan memerlukan pendekatan khusus agar estimasi yang diperoleh tetap akurat dan tidak bias.",
+    "crumbs": [
+      "**MATERI**",
+      "1. Konsep Dasar Censoring dalam Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter3.html",
+    "href": "chapter3.html",
+    "title": "Konteks dan Kondisi Penggunaan Survival Analysis",
+    "section": "",
+    "text": "Note\n\n\n\nKapan sebaiknya mengggunakan Analisis Survival?",
+    "crumbs": [
+      "**MATERI**",
+      "3. Konteks dan Kondisi Penggunaan Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#ketika-fokus-analisis-adalah-waktu-hingga-terjadinya-kejadian-time-to-event",
+    "href": "chapter3.html#ketika-fokus-analisis-adalah-waktu-hingga-terjadinya-kejadian-time-to-event",
+    "title": "Konteks dan Kondisi Penggunaan Survival Analysis",
+    "section": "2.1 Ketika Fokus Analisis adalah Waktu hingga Terjadinya Kejadian (Time-to-Event)",
+    "text": "2.1 Ketika Fokus Analisis adalah Waktu hingga Terjadinya Kejadian (Time-to-Event)\nSurvival analysis digunakan ketika variabel utama dalam penelitian adalah durasi waktu sampai suatu event terjadi, bukan sekadar apakah event tersebut terjadi atau tidak.\nContoh permasalahan yang sesuai antara lain:\n\nWaktu mahasiswa hingga lulus\nWaktu pelanggan hingga berhenti berlangganan\nWaktu karyawan hingga resign\nWaktu mesin hingga mengalami kerusakan\n\nJika analisis hanya bertujuan untuk mengetahui faktor yang memengaruhi kejadian (tanpa mempertimbangkan waktu), maka metode seperti regresi logistik sudah memadai. Namun, ketika durasi menjadi variabel utama dan ingin diketahui secara kuantitatif, survival analysis lebih tepat digunakan.",
+    "crumbs": [
+      "**MATERI**",
+      "3. Konteks dan Kondisi Penggunaan Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#ketika-data-mengandung-censoring",
+    "href": "chapter3.html#ketika-data-mengandung-censoring",
+    "title": "Konteks dan Kondisi Penggunaan Survival Analysis",
+    "section": "2.2 Ketika Data Mengandung Censoring",
+    "text": "2.2 Ketika Data Mengandung Censoring\nSurvival analysis sangat relevan ketika dalam data terdapat observasi yang belum mengalami event hingga akhir periode pengamatan.\nSebagai contoh:\n\nPada akhir penelitian, sebagian mahasiswa belum lulus.\nPada akhir periode observasi, sebagian pelanggan masih aktif.\n\nDalam kondisi tersebut, waktu kejadian tidak diketahui secara pasti, tetapi diketahui bahwa waktu kejadian lebih besar dari waktu terakhir pengamatan. Kondisi ini disebut right censoring.\nPerlu ditegaskan bahwa censoring bukanlah outlier dan bukan kesalahan data.\nOutlier adalah nilai ekstrem yang menyimpang jauh dari pola umum data dan berpotensi mengganggu analisis. Sebaliknya, censoring adalah karakteristik alami dalam data time-to-event, di mana event belum teramati tetapi informasi parsial tetap tersedia.\nCensoring tidak dihindari, melainkan ditangani menggunakan metode khusus seperti Kaplan–Meier estimator atau Cox proportional hazards model agar estimasi tidak bias. Jika data censored dihapus atau diperlakukan sebagai event pada akhir periode, maka hasil analisis dapat menjadi tidak akurat.",
+    "crumbs": [
+      "**MATERI**",
+      "3. Konteks dan Kondisi Penggunaan Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#ketika-ingin-menganalisis-risiko-yang-berubah-seiring-waktu",
+    "href": "chapter3.html#ketika-ingin-menganalisis-risiko-yang-berubah-seiring-waktu",
+    "title": "Konteks dan Kondisi Penggunaan Survival Analysis",
+    "section": "2.3 Ketika Ingin Menganalisis Risiko yang Berubah Seiring Waktu",
+    "text": "2.3 Ketika Ingin Menganalisis Risiko yang Berubah Seiring Waktu\nDalam banyak kasus nyata, risiko terjadinya suatu event tidak bersifat konstan.\nContohnya:\n\nRisiko mahasiswa lulus meningkat mendekati batas waktu studi normal.\nRisiko pelanggan berhenti berlangganan lebih tinggi pada bulan-bulan awal.\nRisiko gagal bayar pinjaman dapat meningkat setelah periode tertentu.\n\nSurvival analysis memungkinkan estimasi fungsi hazard, yaitu tingkat risiko kejadian pada waktu tertentu. Metode statistik biasa tidak dirancang untuk menganalisis dinamika risiko semacam ini.",
+    "crumbs": [
+      "**MATERI**",
+      "3. Konteks dan Kondisi Penggunaan Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#ketika-tujuan-analisis-bersifat-prediktif-dan-mendukung-pengambilan-keputusan",
+    "href": "chapter3.html#ketika-tujuan-analisis-bersifat-prediktif-dan-mendukung-pengambilan-keputusan",
+    "title": "Konteks dan Kondisi Penggunaan Survival Analysis",
+    "section": "2.4 Ketika Tujuan Analisis Bersifat Prediktif dan Mendukung Pengambilan Keputusan",
+    "text": "2.4 Ketika Tujuan Analisis Bersifat Prediktif dan Mendukung Pengambilan Keputusan\nDalam praktik sains data, survival analysis digunakan ketika hasil analisis akan digunakan untuk intervensi atau perencanaan strategis berbasis waktu.\nContoh:\n\nMenentukan kapan memberikan promosi untuk mencegah churn.\nMenentukan jadwal preventive maintenance pada mesin.\nMengidentifikasi periode rawan resign untuk strategi retensi karyawan.\n\nJika keputusan yang diambil bergantung pada estimasi waktu dan risiko, maka survival analysis menjadi metode yang tepat.",
+    "crumbs": [
+      "**MATERI**",
+      "3. Konteks dan Kondisi Penggunaan Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#kesimpulan",
+    "href": "chapter3.html#kesimpulan",
+    "title": "Konteks dan Kondisi Penggunaan Survival Analysis",
+    "section": "2.5 Kesimpulan",
+    "text": "2.5 Kesimpulan\nSurvival analysis sebaiknya digunakan ketika penelitian berfokus pada waktu hingga kejadian, mengandung data censoring, serta membutuhkan analisis risiko yang berubah seiring waktu. Metode ini memungkinkan estimasi yang lebih akurat dan tidak bias dibandingkan pendekatan statistik biasa dalam menghadapi data berbasis durasi.",
+    "crumbs": [
+      "**MATERI**",
+      "3. Konteks dan Kondisi Penggunaan Survival Analysis"
+    ]
+  },
+  {
+    "objectID": "chapter5.html",
+    "href": "chapter5.html",
+    "title": "Analisis Perbandingan: Data Censoring dan Non-Censoring",
+    "section": "",
+    "text": "Note\n\n\n\nAnalisis Perbandingan contoh Data Censoring dan Non-Censoring",
+    "crumbs": [
+      "**MATERI**",
+      "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#pengertian-dasar",
+    "href": "chapter5.html#pengertian-dasar",
+    "title": "Analisis Perbandingan: Data Censoring dan Non-Censoring",
+    "section": "2.1 Pengertian Dasar",
+    "text": "2.1 Pengertian Dasar\nDalam survival analysis, terdapat dua jenis kondisi data utama, yaitu:\n\nData Non-Censoring\nData Censoring\n\nPerbedaannya terletak pada apakah semua individu mengalami event selama periode pengamatan atau tidak.",
+    "crumbs": [
+      "**MATERI**",
+      "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#data-non-censoring",
+    "href": "chapter5.html#data-non-censoring",
+    "title": "Analisis Perbandingan: Data Censoring dan Non-Censoring",
+    "section": "2.2 Data Non-Censoring",
+    "text": "2.2 Data Non-Censoring\n\n2.2.1 Definisi\nData non-censoring adalah data di mana seluruh individu dalam penelitian mengalami event sebelum periode pengamatan berakhir.\nArtinya: - Waktu kejadian diketahui secara lengkap. - Tidak ada individu yang belum mengalami event saat penelitian selesai.\n\n\n2.2.2 Contoh Kasus (Sederhana dan Mudah Dipahami)\nKasus:\nSeorang guru ingin mengetahui berapa menit siswa menyelesaikan kuis matematika.\nSemua siswa wajib mengerjakan sampai selesai.\nEvent = Selesai mengerjakan kuis\nTime-to-event = Lama waktu pengerjaan (menit)\n\n\n2.2.3 Memanggil Data Dummy\n\n# Membuat data dummy non-censoring\ndata_non_censor &lt;- data.frame(\n  ID = 1:10,\n  waktu_menit = c(12, 15, 18, 20, 14, 17, 19, 22, 16, 21),\n  status = rep(1, 10)  # Semua selesai (event terjadi)\n)\n\ndata_non_censor\n\n   ID waktu_menit status\n1   1          12      1\n2   2          15      1\n3   3          18      1\n4   4          20      1\n5   5          14      1\n6   6          17      1\n7   7          19      1\n8   8          22      1\n9   9          16      1\n10 10          21      1\n\n\nSemua siswa menyelesaikan kuis, sehingga:\n\nStatus = 1 untuk semua\nTidak ada censoring\nData lengkap\n\nRata-rata waktu pengerjaan:\n\nmean(data_non_censor$waktu_menit)\n\n[1] 17.4\n\n\n\n\n2.2.4 Karakteristik\n\nSemua mengalami event.\nTidak ada data terpotong.\nBisa dianalisis dengan statistik biasa.",
+    "crumbs": [
+      "**MATERI**",
+      "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#data-censoring",
+    "href": "chapter5.html#data-censoring",
+    "title": "Analisis Perbandingan: Data Censoring dan Non-Censoring",
+    "section": "2.3 Data Censoring",
+    "text": "2.3 Data Censoring\n\n2.3.1 Definisi\nData censoring terjadi ketika sebagian individu belum mengalami event sampai periode pengamatan selesai.\nArtinya:\n\nWaktu event tidak diketahui secara pasti.\nHanya diketahui bahwa event belum terjadi sampai waktu tertentu.\n\n\n\n2.3.2 Contoh Kasus\nGuru yang sama ingin mengetahui berapa menit siswa bertahan sebelum menyerah mengerjakan soal sulit.\nAturan:\n\nWaktu maksimal ujian = 25 menit.\nJika sampai 25 menit belum menyerah, ujian dihentikan.\n\nEvent = Menyerah Time-to-event = Lama bertahan sebelum menyerah\n\n\n2.3.3 Memanggil Data Dummy\n\n# Membuat data dummy dengan censoring\ndata_censor &lt;- data.frame(\n  ID = 1:10,\n  waktu_menit = c(5, 10, 12, 18, 20, 25, 25, 25, 15, 22),\n  status = c(1, 1, 1, 1, 1, 0, 0, 0, 1, 1)\n  # 1 = menyerah\n  # 0 = belum menyerah sampai waktu habis (censored)\n)\n\ndata_censor\n\n   ID waktu_menit status\n1   1           5      1\n2   2          10      1\n3   3          12      1\n4   4          18      1\n5   5          20      1\n6   6          25      0\n7   7          25      0\n8   8          25      0\n9   9          15      1\n10 10          22      1\n\n\nInterpretasi:\n\nSiswa dengan waktu 25 menit dan status 0 adalah censored.\nKita tidak tahu apakah mereka akan menyerah jika diberi waktu lebih lama.\nInformasi yang kita miliki hanya: waktu bertahan ≥ 25 menit.\n\nInilah yang disebut right censoring.",
+    "crumbs": [
+      "**MATERI**",
+      "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#perbandingan-data-censoring-dan-non-censoring",
+    "href": "chapter5.html#perbandingan-data-censoring-dan-non-censoring",
+    "title": "Analisis Perbandingan: Data Censoring dan Non-Censoring",
+    "section": "2.4 Perbandingan Data Censoring dan Non-Censoring",
+    "text": "2.4 Perbandingan Data Censoring dan Non-Censoring\n\n\n\n\n\n\n\n\nAspek\nNon-Censoring\nCensoring\n\n\n\n\nEvent terjadi\nSemua siswa selesai\nSebagian menyerah\n\n\nInformasi waktu\nLengkap\nSebagian tidak lengkap\n\n\nPerlu survival analysis\nTidak wajib\nWajib\n\n\nRisiko bias\nRendah\nTinggi jika pakai mean biasa",
+    "crumbs": [
+      "**MATERI**",
+      "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#dampak-terhadap-analisis",
+    "href": "chapter5.html#dampak-terhadap-analisis",
+    "title": "Analisis Perbandingan: Data Censoring dan Non-Censoring",
+    "section": "2.5 Dampak terhadap Analisis",
+    "text": "2.5 Dampak terhadap Analisis\n\n2.5.1 Jika Menggunakan Mean Biasa pada Data Censoring\n\nmean(data_censor$waktu_menit)\n\n[1] 17.7\n\n\nHasilnya bias karena:\n\nSiswa yang masih bertahan dianggap selesai di menit ke-25.\nPadahal mereka belum menyerah.\nEstimasi menjadi tidak akurat.\n\n\n\n\n2.5.2 Jika Menggunakan Survival Analysis\n\nlibrary(survival)\n\nWarning: package 'survival' was built under R version 4.4.3\n\nsurv_object &lt;- Surv(time = data_censor$waktu_menit,\n                    event = data_censor$status)\n\nfit &lt;- survfit(surv_object ~ 1)\n\nplot(fit,\n     xlab = \"Waktu (Menit)\",\n     ylab = \"Probabilitas Bertahan\")\n\n\n\n\n\n\n\n\nMetode ini:\n\nMengakomodasi data censored.\nMengestimasi probabilitas siswa masih bertahan pada waktu tertentu.\nTidak membuang informasi siswa yang belum menyerah.",
+    "crumbs": [
+      "**MATERI**",
+      "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#contoh-konsep-sederhana",
+    "href": "chapter5.html#contoh-konsep-sederhana",
+    "title": "Analisis Perbandingan: Data Censoring dan Non-Censoring",
+    "section": "2.6 Contoh Konsep Sederhana",
+    "text": "2.6 Contoh Konsep Sederhana\nJika siswa bertahan sampai menit ke-25 dan waktu habis, maka:\n\nKita tidak bisa mengatakan ia menyerah di menit ke-25.\nYang benar: waktu bertahan ≥ 25 menit.\nStatus = censored.",
+    "crumbs": [
+      "**MATERI**",
+      "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#kesimpulan",
+    "href": "chapter5.html#kesimpulan",
+    "title": "Analisis Perbandingan: Data Censoring dan Non-Censoring",
+    "section": "2.7 Kesimpulan",
+    "text": "2.7 Kesimpulan\nPerbedaan utama antara data censoring dan non-censoring terletak pada kelengkapan informasi waktu kejadian.\nPada non-censoring: Semua individu mengalami event dan waktunya diketahui secara pasti.\nPada censoring: Sebagian individu belum mengalami event hingga akhir pengamatan.\nDalam praktik nyata, data censoring lebih sering terjadi. Oleh karena itu, survival analysis digunakan agar estimasi probabilitas dan risiko kejadian tetap akurat dan tidak bias.",
+    "crumbs": [
+      "**MATERI**",
+      "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+    ]
+  }
+]
