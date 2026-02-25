@@ -1,0 +1,188 @@
+---
+title: "Konsep Dasar Censoring dalam Analisis Survival"
+date: today
+---
+
+# Pertanyaan
+
+:::{.callout-note}
+Apa yang dimaksud dengan Censoring Data?
+:::
+
+---
+
+# Jawaban
+
+Jawaban dari materi ini dapat lebih mudah untuk dipahami dan dikembangkan berdasarkan video berikut:
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+knitr::include_url("https://youtube.com/embed/XNV3vuDWo-U")
+
+```
+
+
+## Pengertian Censoring dalam Time-to-Event Data
+
+Dalam survival analysis, **censoring** adalah kondisi ketika waktu terjadinya suatu event (kejadian) tidak diketahui secara pasti, tetapi sebagian informasi mengenai waktu tersebut masih tersedia.
+
+Dengan kata lain, data tidak sepenuhnya hilang, melainkan hanya tidak lengkap. Oleh karena itu, sering ditegaskan bahwa:
+
+> **Censoring ≠ Missing Data**
+
+Pada missing data, informasi benar-benar tidak tersedia.
+Sedangkan pada censoring, kita tetap mengetahui sebagian informasi mengenai durasi atau batas waktu terjadinya event.
+
+Secara formal, censoring terjadi ketika:
+
+> Waktu kejadian hanya diketahui lebih besar, lebih kecil, atau berada dalam suatu interval tertentu, tetapi waktu pastinya tidak diketahui.
+
+
+## Contoh Censoring dalam Kehidupan Nyata
+
+Misalkan dilakukan penelitian mengenai:
+
+> Waktu labu ukir (jack-o’-lantern) dari pertama dipajang di teras hingga menjadi lembek (mushy).
+
+Jika penelitian dilakukan selama 30 hari menjelang Halloween dan pada akhir penelitian masih terdapat labu yang belum lembek, maka:
+
+* Kita mengetahui bahwa labu tersebut telah bertahan minimal sampai hari ke-30.
+* Namun, kita tidak mengetahui kapan tepatnya labu itu akan menjadi lembek setelah penelitian berakhir.
+
+Kondisi ini disebut sebagai **censored data**, karena waktu pasti labu menjadi lembek tidak teramati secara lengkap.
+
+Sebaliknya, labu yang sudah menjadi lembek selama periode penelitian termasuk data **non-censored**, karena waktu kejadiannya diketahui (atau setidaknya diketahui interval terjadinya).
+
+
+## Jenis-Jenis Censoring
+
+Dalam survival analysis, terdapat beberapa jenis censoring, yaitu:
+
+### a. Right Censoring
+
+Right censoring adalah jenis yang paling umum terjadi. Kondisi ini terjadi ketika:
+
+> Waktu kejadian lebih besar dari waktu terakhir pengamatan.
+
+Contoh:
+
+Penelitian dilakukan selama 30 hari. Hingga hari ke-30, beberapa labu masih terlihat bagus dan belum menjadi lembek.
+
+Secara matematis dapat ditulis:
+
+$$
+T \geq 30
+$$
+
+Artinya, waktu bertahan labu minimal 30 hari, tetapi waktu pastinya belum diketahui karena penelitian sudah selesai.
+
+
+### b. Left Censoring
+
+Left censoring terjadi ketika:
+
+> Kejadian sudah terjadi sebelum waktu pengamatan dimulai, tetapi waktu pastinya tidak diketahui.
+
+Contoh:
+
+Saat penelitian dimulai, ditemukan beberapa labu yang sudah dalam kondisi lembek. Namun, tidak diketahui kapan tepatnya labu tersebut mulai membusuk.
+
+Artinya, kejadian (menjadi lembek) sudah terjadi sebelum penelitian dimulai, tetapi waktu pastinya tidak diketahui.
+
+
+### c. Interval Censoring
+
+Interval censoring terjadi ketika:
+
+> Kejadian diketahui terjadi di antara dua waktu tertentu, tetapi tidak diketahui secara pasti kapan dalam interval tersebut.
+
+Contoh:
+
+Pemeriksaan labu dilakukan setiap 3 hari.
+
+- Hari ke-6: labu masih bagus  
+- Hari ke-9: labu sudah lembek  
+
+Artinya:
+
+$$
+6 < T \leq 9
+$$
+
+Kejadian terjadi di antara hari ke-6 dan hari ke-9, tetapi waktu pastinya tidak diketahui.
+
+
+## Pentingnya Censoring dalam Survival Analysis
+
+Konsep censoring sangat penting karena:
+
+1. Survival analysis berfokus pada durasi waktu sampai event terjadi.
+2. Dalam praktiknya, tidak semua objek (misalnya labu) mengalami event selama periode penelitian.
+3. Jika data censored diabaikan atau diperlakukan seperti data lengkap, maka hasil analisis akan menjadi bias.
+
+Sebagai contoh, jika labu yang masih bagus pada hari ke-30 dianggap menjadi lembek tepat pada hari ke-30, maka rata-rata waktu ketahanan labu akan menjadi tidak akurat.
+
+Oleh karena itu, survival analysis menggunakan metode khusus seperti:
+
+* Kaplan–Meier estimator untuk mengestimasi fungsi survival
+* Cox proportional hazards model untuk menganalisis pengaruh variabel terhadap risiko kejadian
+
+Metode-metode tersebut dirancang khusus untuk menangani data yang mengandung censoring.
+
+
+## Kesimpulan
+
+Censoring dalam time-to-event data adalah kondisi ketika waktu terjadinya suatu event tidak diketahui secara pasti, tetapi sebagian informasi mengenai durasi tetap tersedia. Censoring bukan merupakan kesalahan atau kehilangan data, melainkan karakteristik alami dalam data survival.
+
+Keberadaan censoring membuat survival analysis berbeda dari metode statistik biasa, dan memerlukan pendekatan khusus agar estimasi yang diperoleh tetap akurat dan tidak bias.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

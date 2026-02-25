@@ -1,0 +1,142 @@
+---
+title: "Konteks dan Kondisi Penggunaan Survival Analysis"
+date: today
+---
+
+# Pertanyaan
+
+:::{.callout-note}
+Kapan sebaiknya mengggunakan Analisis Survival?
+:::
+
+---
+
+# Jawaban
+
+## Ketika Fokus Analisis adalah Waktu hingga Terjadinya Kejadian (Time-to-Event)
+
+Survival analysis digunakan ketika variabel utama dalam penelitian adalah **durasi waktu sampai suatu event terjadi**, bukan sekadar apakah event tersebut terjadi atau tidak.
+
+Contoh permasalahan yang sesuai antara lain:
+
+* Waktu mahasiswa hingga lulus
+* Waktu pelanggan hingga berhenti berlangganan
+* Waktu karyawan hingga resign
+* Waktu mesin hingga mengalami kerusakan
+
+Jika analisis hanya bertujuan untuk mengetahui faktor yang memengaruhi kejadian (tanpa mempertimbangkan waktu), maka metode seperti regresi logistik sudah memadai. Namun, ketika durasi menjadi variabel utama dan ingin diketahui secara kuantitatif, survival analysis lebih tepat digunakan.
+
+
+## Ketika Data Mengandung Censoring
+
+Survival analysis sangat relevan ketika dalam data terdapat observasi yang belum mengalami event hingga akhir periode pengamatan.
+
+Sebagai contoh:
+
+* Pada akhir penelitian, sebagian mahasiswa belum lulus.
+* Pada akhir periode observasi, sebagian pelanggan masih aktif.
+
+Dalam kondisi tersebut, waktu kejadian tidak diketahui secara pasti, tetapi diketahui bahwa waktu kejadian lebih besar dari waktu terakhir pengamatan. Kondisi ini disebut **right censoring**.
+
+Perlu ditegaskan bahwa censoring bukanlah outlier dan bukan kesalahan data.
+
+Outlier adalah nilai ekstrem yang menyimpang jauh dari pola umum data dan berpotensi mengganggu analisis.
+Sebaliknya, censoring adalah karakteristik alami dalam data time-to-event, di mana event belum teramati tetapi informasi parsial tetap tersedia.
+
+Censoring tidak dihindari, melainkan ditangani menggunakan metode khusus seperti Kaplan–Meier estimator atau Cox proportional hazards model agar estimasi tidak bias. Jika data censored dihapus atau diperlakukan sebagai event pada akhir periode, maka hasil analisis dapat menjadi tidak akurat.
+
+
+## Ketika Ingin Menganalisis Risiko yang Berubah Seiring Waktu
+
+Dalam banyak kasus nyata, risiko terjadinya suatu event tidak bersifat konstan.
+
+Contohnya:
+
+* Risiko mahasiswa lulus meningkat mendekati batas waktu studi normal.
+* Risiko pelanggan berhenti berlangganan lebih tinggi pada bulan-bulan awal.
+* Risiko gagal bayar pinjaman dapat meningkat setelah periode tertentu.
+
+Survival analysis memungkinkan estimasi fungsi hazard, yaitu tingkat risiko kejadian pada waktu tertentu. Metode statistik biasa tidak dirancang untuk menganalisis dinamika risiko semacam ini.
+
+
+## Ketika Tujuan Analisis Bersifat Prediktif dan Mendukung Pengambilan Keputusan
+
+Dalam praktik sains data, survival analysis digunakan ketika hasil analisis akan digunakan untuk intervensi atau perencanaan strategis berbasis waktu.
+
+Contoh:
+
+* Menentukan kapan memberikan promosi untuk mencegah churn.
+* Menentukan jadwal preventive maintenance pada mesin.
+* Mengidentifikasi periode rawan resign untuk strategi retensi karyawan.
+
+Jika keputusan yang diambil bergantung pada estimasi waktu dan risiko, maka survival analysis menjadi metode yang tepat.
+
+
+## Kesimpulan
+
+Survival analysis sebaiknya digunakan ketika penelitian berfokus pada waktu hingga kejadian, mengandung data censoring, serta membutuhkan analisis risiko yang berubah seiring waktu. Metode ini memungkinkan estimasi yang lebih akurat dan tidak bias dibandingkan pendekatan statistik biasa dalam menghadapi data berbasis durasi.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

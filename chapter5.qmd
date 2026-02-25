@@ -1,0 +1,202 @@
+---
+title: "Analisis Perbandingan: Data Censoring dan Non-Censoring"
+date: today
+---
+
+# Pertanyaan
+
+:::{.callout-note}
+Analisis Perbandingan contoh Data Censoring dan Non-Censoring
+:::
+
+---
+
+# Jawaban
+
+## Pengertian Dasar
+
+Dalam *survival analysis*, terdapat dua jenis kondisi data utama, yaitu:
+
+- **Data Non-Censoring**
+- **Data Censoring**
+
+Perbedaannya terletak pada apakah semua individu mengalami *event* selama periode pengamatan atau tidak.
+
+
+## Data Non-Censoring
+
+### Definisi
+
+Data non-censoring adalah data di mana seluruh individu dalam penelitian mengalami *event* sebelum periode pengamatan berakhir.
+
+Artinya:
+- Waktu kejadian diketahui secara lengkap.
+- Tidak ada individu yang belum mengalami event saat penelitian selesai.
+
+
+### Contoh Kasus (Sederhana dan Mudah Dipahami)
+
+Kasus:  
+Seorang guru ingin mengetahui **berapa menit siswa menyelesaikan kuis matematika**.
+
+Semua siswa wajib mengerjakan sampai selesai.
+
+Event = Selesai mengerjakan kuis  
+Time-to-event = Lama waktu pengerjaan (menit)
+
+
+### Memanggil Data Dummy
+
+```{r}
+# Membuat data dummy non-censoring
+data_non_censor <- data.frame(
+  ID = 1:10,
+  waktu_menit = c(12, 15, 18, 20, 14, 17, 19, 22, 16, 21),
+  status = rep(1, 10)  # Semua selesai (event terjadi)
+)
+
+data_non_censor
+```
+
+Semua siswa menyelesaikan kuis, sehingga:
+
+* Status = 1 untuk semua
+* Tidak ada censoring
+* Data lengkap
+
+Rata-rata waktu pengerjaan:
+
+```{r}
+mean(data_non_censor$waktu_menit)
+```
+
+
+### Karakteristik
+
+* Semua mengalami event.
+* Tidak ada data terpotong.
+* Bisa dianalisis dengan statistik biasa.
+
+
+## Data Censoring
+
+### Definisi
+
+Data censoring terjadi ketika sebagian individu belum mengalami *event* sampai periode pengamatan selesai.
+
+Artinya:
+
+* Waktu event tidak diketahui secara pasti.
+* Hanya diketahui bahwa event belum terjadi sampai waktu tertentu.
+
+
+### Contoh Kasus
+
+Guru yang sama ingin mengetahui **berapa menit siswa bertahan sebelum menyerah mengerjakan soal sulit**.
+
+Aturan:
+
+* Waktu maksimal ujian = 25 menit.
+* Jika sampai 25 menit belum menyerah, ujian dihentikan.
+
+Event = Menyerah
+Time-to-event = Lama bertahan sebelum menyerah
+
+
+### Memanggil Data Dummy 
+
+```{r}
+# Membuat data dummy dengan censoring
+data_censor <- data.frame(
+  ID = 1:10,
+  waktu_menit = c(5, 10, 12, 18, 20, 25, 25, 25, 15, 22),
+  status = c(1, 1, 1, 1, 1, 0, 0, 0, 1, 1)
+  # 1 = menyerah
+  # 0 = belum menyerah sampai waktu habis (censored)
+)
+
+data_censor
+```
+
+
+Interpretasi:
+
+* Siswa dengan waktu 25 menit dan status 0 adalah censored.
+* Kita tidak tahu apakah mereka akan menyerah jika diberi waktu lebih lama.
+* Informasi yang kita miliki hanya: waktu bertahan ≥ 25 menit.
+
+Inilah yang disebut **right censoring**.
+
+
+## Perbandingan Data Censoring dan Non-Censoring
+
+| Aspek                   | Non-Censoring       | Censoring                    |
+| ----------------------- | ------------------- | ---------------------------- |
+| Event terjadi           | Semua siswa selesai | Sebagian menyerah            |
+| Informasi waktu         | Lengkap             | Sebagian tidak lengkap       |
+| Perlu survival analysis | Tidak wajib         | Wajib                        |
+| Risiko bias             | Rendah              | Tinggi jika pakai mean biasa |
+
+
+## Dampak terhadap Analisis
+
+### Jika Menggunakan Mean Biasa pada Data Censoring
+
+```{r}
+mean(data_censor$waktu_menit)
+```
+
+
+Hasilnya bias karena:
+
+* Siswa yang masih bertahan dianggap selesai di menit ke-25.
+* Padahal mereka belum menyerah.
+* Estimasi menjadi tidak akurat.
+
+---
+
+### Jika Menggunakan Survival Analysis
+
+```{r}
+library(survival)
+
+surv_object <- Surv(time = data_censor$waktu_menit,
+                    event = data_censor$status)
+
+fit <- survfit(surv_object ~ 1)
+
+plot(fit,
+     xlab = "Waktu (Menit)",
+     ylab = "Probabilitas Bertahan")
+```
+
+
+Metode ini:
+
+* Mengakomodasi data censored.
+* Mengestimasi probabilitas siswa masih bertahan pada waktu tertentu.
+* Tidak membuang informasi siswa yang belum menyerah.
+
+
+## Contoh Konsep Sederhana
+
+Jika siswa bertahan sampai menit ke-25 dan waktu habis, maka:
+
+* Kita tidak bisa mengatakan ia menyerah di menit ke-25.
+* Yang benar: waktu bertahan ≥ 25 menit.
+* Status = censored.
+
+
+## Kesimpulan
+
+Perbedaan utama antara data censoring dan non-censoring terletak pada kelengkapan informasi waktu kejadian.
+
+Pada non-censoring:
+Semua individu mengalami event dan waktunya diketahui secara pasti.
+
+Pada censoring:
+Sebagian individu belum mengalami event hingga akhir pengamatan.
+
+Dalam praktik nyata, data censoring lebih sering terjadi. Oleh karena itu, survival analysis digunakan agar estimasi probabilitas dan risiko kejadian tetap akurat dan tidak bias.
+
+---

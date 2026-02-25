@@ -1,0 +1,60 @@
+---
+title: "Survival Analysis"
+author: Olivia Meilinda Davtin Pesireron
+        
+date: today
+format: html
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(DT)
+
+```
+
+<img class="fotbar" src="img/oliv.jpeg">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

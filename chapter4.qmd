@@ -1,0 +1,203 @@
+---
+title: "Implementasi Survival Analysis dalam Kasus Nyata Sains Data"
+date: today
+---
+
+# Pertanyaan
+
+:::{.callout-note}
+Terapan Analisis Survival dalam Sains Data
+:::
+
+---
+
+# Jawaban
+
+## Berikut beberapa bidang yang sangat relevan dan berpengaruh:
+
+
+### Bidang Kesehatan
+
+Contoh:
+
+* Waktu bertahan hidup pasien setelah diagnosis
+* Waktu hingga penyakit kambuh
+* Waktu hingga terjadi komplikasi
+
+**Peran survival analysis:**
+
+* Menghitung peluang pasien bertahan hidup sampai waktu tertentu
+* Mengukur risiko kematian atau komplikasi pada setiap periode
+* Membandingkan efektivitas beberapa jenis pengobatan
+
+Bidang kesehatan menjadi salah satu pengguna utama survival analysis karena banyak data pasien belum mengalami kejadian saat penelitian selesai, sehingga membutuhkan metode khusus untuk menganalisisnya.
+
+
+### Bidang Investasi dan Keuangan
+
+Contoh:
+
+* Waktu hingga perusahaan bangkrut
+* Waktu hingga kredit mengalami gagal bayar
+* Waktu hingga obligasi mengalami default
+
+**Peran survival analysis:**
+
+* Mengestimasi kemungkinan perusahaan atau debitur tetap bertahan dalam periode tertentu
+* Mengukur risiko kebangkrutan atau gagal bayar dari waktu ke waktu
+* Mengidentifikasi faktor yang meningkatkan risiko finansial
+
+Metode ini membantu perusahaan dan lembaga keuangan dalam mengelola risiko serta membuat keputusan investasi yang lebih tepat.
+
+
+### Bidang Pendidikan
+
+Contoh:
+
+* Waktu hingga mahasiswa lulus
+* Waktu hingga mahasiswa dropout
+* Lama studi mahasiswa
+
+**Peran survival analysis:**
+
+* Menghitung peluang mahasiswa masih aktif sampai semester tertentu
+* Mengidentifikasi faktor yang memengaruhi kelulusan atau dropout
+* Membantu evaluasi kebijakan akademik
+
+Karena tidak semua mahasiswa mengalami kelulusan pada waktu yang sama, metode ini sangat relevan digunakan.
+
+
+### Bidang Sosial
+
+Contoh:
+
+* Waktu hingga seseorang memperoleh pekerjaan
+* Waktu hingga terjadi perceraian
+* Lama partisipasi dalam suatu program sosial
+
+**Peran survival analysis:**
+
+* Menganalisis lamanya suatu kondisi sosial berlangsung
+* Mengukur risiko terjadinya suatu peristiwa dalam periode tertentu
+* Mengevaluasi efektivitas program sosial
+
+Metode ini membantu memahami perubahan kondisi sosial secara lebih terstruktur dan berbasis waktu.
+
+
+## Bagaimana Cara Menggunakan Survival Analysis?
+
+Secara praktis, penggunaan survival analysis dalam sains data dilakukan melalui beberapa langkah utama:
+
+### Menentukan Event dan Time-to-Event
+Pertama, tentukan:
+- Apa event yang ingin dianalisis (misalnya: pasien meninggal, pelanggan churn, mahasiswa dropout).
+- Dari kapan waktu mulai dihitung hingga event terjadi.
+
+Contoh:
+Jika menganalisis churn pelanggan, maka:
+- Event = pelanggan berhenti berlangganan
+- Time-to-event = lama waktu sejak mulai berlangganan hingga berhenti
+
+
+### Menentukan Status Data (Event atau Censored)
+Setiap individu harus diberi label:
+- 1 = event terjadi
+- 0 = censored (event belum terjadi sampai akhir pengamatan)
+
+Ini penting karena survival analysis secara khusus dirancang untuk menangani data yang belum mengalami event.
+
+
+### Mengestimasi Fungsi Survival (Kaplan–Meier)
+
+Digunakan untuk menjawab pertanyaan:
+
+> Berapa probabilitas suatu individu masih bertahan sampai waktu tertentu?
+
+Hasilnya berupa kurva survival yang menunjukkan penurunan probabilitas dari waktu ke waktu.
+
+Contoh interpretasi:
+Jika pada bulan ke-12 probabilitas survival = 0,70  
+Artinya 70% pelanggan masih bertahan sampai bulan ke-12.
+
+
+### Menghitung Hazard (Risiko Sesaat)
+
+Hazard menunjukkan:
+
+> Seberapa besar risiko event terjadi pada waktu tertentu, dengan syarat individu masih bertahan sampai waktu tersebut.
+
+Untuk menganalisis pengaruh faktor tertentu (misalnya usia, pendapatan, jenis pengobatan), digunakan model:
+
+- **Cox Proportional Hazards Model**
+
+Model ini menghasilkan **hazard ratio**, yang menunjukkan apakah suatu faktor meningkatkan atau menurunkan risiko kejadian.
+
+
+## Kesimpulan
+
+Survival analysis memiliki peran penting dalam sains data, khususnya di bidang kesehatan, investasi, pendidikan, dan sosial. Metode ini digunakan ketika analisis tidak hanya berfokus pada apakah suatu kejadian terjadi, tetapi juga pada **kapan** kejadian tersebut terjadi serta bagaimana risikonya berubah dari waktu ke waktu.
+
+Singkatnya, *survival analysis* dalam sains data adalah tentang **menghargai waktu**. Analisis ini tidak hanya melihat hasil akhir (misalnya hidup atau meninggal, bertahan atau churn), tetapi juga memperhatikan **durasi** hingga kejadian tersebut terjadi. Dengan memahami durasi dan pola risiko, organisasi dapat mengambil keputusan yang lebih tepat, melakukan intervensi pada waktu yang optimal, serta mengelola sumber daya secara lebih efisien dan ekonomis.
+
+Dengan demikian, survival analysis bukan sekadar teknik statistik, tetapi alat strategis dalam pengambilan keputusan berbasis waktu dan risiko.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

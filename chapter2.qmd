@@ -1,0 +1,122 @@
+---
+title: "Urgensi Survival Analysis dalam Perkembangan Sains Data Modern"
+date: today
+---
+ 
+# Pertanyaan
+
+:::{.callout-note}
+Mengapa Belajar Analisis Survival?
+:::
+
+---
+
+# Jawaban
+
+## Banyak Permasalahan Berbentuk Time-to-Event
+
+Survival analysis perlu dipelajari karena banyak fenomena nyata berfokus pada waktu hingga terjadinya suatu kejadian (time-to-event), bukan sekadar apakah kejadian tersebut terjadi atau tidak.
+
+Contoh permasalahan time-to-event antara lain:
+
+* Waktu pasien hingga sembuh atau meninggal
+* Waktu pelanggan hingga berhenti berlangganan (churn)
+* Waktu karyawan hingga resign
+* Waktu mesin hingga rusak
+* Waktu mahasiswa hingga lulus
+
+Permasalahan semacam ini tidak dapat dianalisis secara optimal menggunakan metode regresi atau klasifikasi biasa, karena aspek waktu merupakan komponen utama yang harus dimodelkan.
+
+
+## Adanya Data Censoring
+
+Dalam penelitian berbasis waktu, sering ditemukan data di mana kejadian belum terjadi selama periode pengamatan. Kondisi ini disebut sebagai censoring.
+
+Jika data censored diperlakukan sebagai data lengkap atau diabaikan, maka hasil analisis akan menjadi bias. Survival analysis menyediakan metode khusus yang mampu menangani data censoring secara tepat, sehingga estimasi probabilitas dan risiko tetap akurat.
+
+
+## Kemampuan Mengukur Risiko Seiring Waktu
+
+Survival analysis memungkinkan analisis terhadap:
+
+* Probabilitas bertahan (survival probability)
+* Fungsi risiko atau hazard rate
+* Perubahan tingkat risiko dari waktu ke waktu
+
+Hal ini penting karena dalam banyak kasus, risiko suatu kejadian tidak bersifat konstan, melainkan berubah mengikuti waktu.
+
+Metode klasifikasi biasa hanya memberikan prediksi ya/tidak, sedangkan survival analysis mampu menjawab pertanyaan: *kapan dan seberapa besar risiko kejadian terjadi*.
+
+
+## Relevansi dalam Sains Data dan Dunia Industri
+
+Dalam bidang sains data, survival analysis memiliki banyak penerapan praktis, seperti:
+
+* Analisis churn pelanggan pada perusahaan digital
+* Analisis risiko gagal bayar dalam industri keuangan
+* Predictive maintenance pada sektor manufaktur
+* Analisis retensi pengguna pada perusahaan teknologi
+
+Kemampuan menganalisis durasi dan risiko memberikan nilai tambah bagi praktisi sains data karena menghasilkan insight yang lebih mendalam dan berbasis waktu.
+
+
+## Kesimpulan
+
+Survival analysis perlu dipelajari karena mampu menangani permasalahan time-to-event dan data censoring yang tidak dapat dianalisis dengan metode statistik biasa. Metode ini memungkinkan analisis durasi dan risiko secara akurat serta memiliki relevansi tinggi dalam berbagai bidang statistik dan sains data.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

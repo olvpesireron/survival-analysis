@@ -1,0 +1,63 @@
+project:
+  type: website
+
+# TITLE TOC
+website:
+  title: "Survival Analysis"
+  repo-url: https://github.com
+  repo-actions: [source, edit]
+  navbar: false
+  
+# SIDEBAR
+  sidebar:
+    logo: img/Foto Formal Oliv.JPEG
+    title: "Introduction to Survival Analysis"
+    pinned: true
+    style: "docked"
+    search: true
+    
+    tools:
+      - icon: github
+        href: "https://github.com/"
+      - icon: instagram
+        href: "https://instagram.com/mhmmd.rizky_bagas"
+      - icon: globe
+        href: "https://muhammadrizkybagas.github.io/portofolio1/"
+       
+    contents:
+      - text: "INTRODUCTION"
+        href: intro.qmd
+      - section: "**MATERI**"
+        contents:
+          - text: "1. Konsep Dasar Censoring dalam Survival Analysis"
+            href: chapter1.qmd
+            
+          - text: "2. Urgensi Survival Analysis dalam Perkembangan Sains Data Modern"
+            href: chapter2.qmd
+            
+          - text: "3. Konteks dan Kondisi Penggunaan Survival Analysis"
+            href: chapter3.qmd
+            
+          - text: "4. Implementasi Survival Analysis dalam Kasus Nyata Sains Data"
+            href: chapter4.qmd
+            
+          - text: "5. Analisis Perbandingan: Data Censoring dan Non-Censoring"
+            href: chapter5.qmd
+# END SIDEBAR
+    
+  page-footer:
+    left: "© 2026 Olivia Meilinda Davtin Pesireron"
+    right: "Powered by Quarto"
+
+# THEME
+format:
+  html:
+    theme: cosmo
+    link-citations: true
+    css: css/styles.css
+    toc: true
+    number-sections: true
+
+# REFERENCES
+bibliography: referensi/referensi.bib
+csl: referensi/ieee.csl
